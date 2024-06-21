@@ -1,0 +1,37 @@
+.container {
+    margin-bottom: 40px;
+  }
+  
+  .container p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .main {
+    display: flex;
+    width: 80%;
+  }
+  
+  .main div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #304ffe18;
+    color: #304ffe;
+    margin-right: 30px;
+    width: 120px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  @media(max-width:700px){
+    .main{
+        flex-direction: column;
+    }
+    .main div input{
+        margin-right: 10px;
+    }
+    .main div{
+        margin-bottom: 10px;
+    }
+  }
