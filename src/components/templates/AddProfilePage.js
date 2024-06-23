@@ -45,26 +45,38 @@ const AddProfilePage = ({ data }) => {
       toast.error(data.error);
     } else {
       toast.success(data.message);
+      setProfileData({
+        title: "",
+        description: "",
+        location: "",
+        phone: "",
+        price: "",
+        realState: "",
+        constructionDate: new Date(),
+        category: "",
+        rules: [],
+        amenities: [],
+      });
       router.refresh();
     }
   };
 
-  const editHandler = async() => {
+  const editHandler = async () => {
     setLoading(true);
-    const res= await fetch('/api/profile',{
+    const res = await fetch("/api/profile", {
       method: "PATCH",
-      body: JSON.stringify(profileData) ,
-      headers:{
+      body: JSON.stringify(profileData),
+      headers: {
         "Content-Type": "application/json",
-      }
-    })
-    const data=await res.json()
-    setLoading(false)
-    if(data.error){
-      toast.error(data.error)
-    }else{
-      toast.success(data.message)
-      router.refresh()
+      },
+    });
+    const data = await res.json();
+    setLoading(false);
+    if (data.error) {
+      toast.error(data.error);
+    } else {
+      toast.success(data.message);
+      router.refresh();
     }
   };
   return (
@@ -96,7 +108,7 @@ const AddProfilePage = ({ data }) => {
         setProfileData={setProfileData}
       />
       <TextInput
-        title="Price-US Dollar"
+        title="Price-Euro"
         name="price"
         profileData={profileData}
         setProfileData={setProfileData}

@@ -5,6 +5,21 @@ import { Types } from "mongoose";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
+export async function GET() {
+  try {
+    await connectDB();
+    const profiles = await Profile.find().select("-userId");
+    //console.log(profiles)
+    return NextResponse.json({data: profiles}, {status:200})
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      { error: "Internal Server Error!" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(req) {
   try {
     await connectDB();
@@ -134,21 +149,22 @@ export async function PATCH(req) {
       );
     }
 
-    profile.title= title;
-    profile.description= description;
-    profile.phone= phone;
-    profile.location= location;
-    profile.realState= realState;
-    profile.price= price;
-    profile.constructionDate= constructionDate;
-    profile.amenities= amenities;
-    profile.rules= rules;
-    profile.category= category;
+    profile.title = title;
+    profile.description = description;
+    profile.phone = phone;
+    profile.location = location;
+    profile.realState = realState;
+    profile.price = price;
+    profile.constructionDate = constructionDate;
+    profile.amenities = amenities;
+    profile.rules = rules;
+    profile.category = category;
     profile.save();
 
-    return NextResponse.json({message:"Advertisement was successfully edited."},{status: 200})
-
-
+    return NextResponse.json(
+      { message: "Advertisement was successfully edited." },
+      { status: 200 }
+    );
   } catch (error) {
     console.log(error);
     return NextResponse.json(

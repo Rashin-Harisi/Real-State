@@ -27,6 +27,9 @@
     font-weight: 400;
     margin-top: 20px;
   }
+  .sidebar .admin{
+    margin-top: 10px;
+  }
   
   .sidebar span {
     background-color: #304ffe;
@@ -73,6 +76,10 @@
   }
   @media (max-width: 450px){
     .details a{
+      flex-shrink: 1;
       font-size: 0.7rem;
+    }
+    .details{
+      flex-direction: column;
     }
   }
