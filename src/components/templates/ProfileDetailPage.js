@@ -53,7 +53,7 @@ const ProfileDetailPage = ({ data }) => {
             {icons[category]}
             {categories[category]}
           </p>
-          <p>{separatedNumber(price)} USD</p>
+          <p>{separatedNumber(price)} $</p>
           <p>
             <BiCalendarCheck />
             {new Date(constructionDate).toLocaleDateString()}

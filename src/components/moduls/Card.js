@@ -14,7 +14,7 @@ const Card = ({ data: { _id, category, title, location, price } }) => {
         <HiOutlineLocationMarker />
         {location}
       </p>
-      <span>{separatedNumber(price)} €</span>
+      <span>{separatedNumber(price)} $</span>
       <Link href={`/buy-residential/${_id}`}>Info <BiRightArrowAlt/></Link>
     </div>
   );

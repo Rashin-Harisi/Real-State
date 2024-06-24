@@ -35,7 +35,7 @@ const AdminCard = ({data}) => {
         <p>{data.description}</p>
         <div className={styles.properties}>
             <span>{data.location}</span>
-            <span>{`${separatedNumber(data.price)} €`}</span>
+            <span>{`${separatedNumber(data.price)} $`}</span>
         </div>
         <button onClick={publishHandler}>Publish</button>
         <button  className={styles.delete} onClick={deleteHandler}>Delete</button>

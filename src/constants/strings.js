@@ -1,13 +1,13 @@
 const services = ["Buy", "Sell", "Rent"];
   const cities = [
-    "Vienna",
-    "Graz",
-    "Linz",
-    "Wiener Neustadt",
-    "Salzburg",
-    "Wels",
-    "Dornbirn",
-    "Innsbruck",
+    "New York City",
+    "Los Angeles",
+    "Chicago",
+    "Houston",
+    "Phoenix",
+    "Philadelphia",
+    "San Antonio",
+    "San Diego",
   ];
   const categories ={
     house: "House",

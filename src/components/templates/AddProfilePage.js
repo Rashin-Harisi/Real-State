@@ -108,7 +108,7 @@ const AddProfilePage = ({ data }) => {
         setProfileData={setProfileData}
       />
       <TextInput
-        title="Price-Euro"
+        title="Price-USD"
         name="price"
         profileData={profileData}
         setProfileData={setProfileData}
